@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive registration form with JavaScript validation">
+    <title>Tushar Verma | Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="page">
+
+        <section class="form-container">
+
+            <div class="form-header">
+                <div class="logo">TV</div>
+
+                <h1>Create Your Account</h1>
+
+                <p>
+                    Fill in your details to get started.
+                </p>
+            </div>
+
+            <form id="registrationForm" novalidate>
+
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" autocomplete="name">
+
+                    <small class="error" id="nameError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+
+                    <input type="email" id="email" name="email" placeholder="Enter your email" autocomplete="email">
+
+                    <small class="error" id="emailError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+
+                    <input type="tel" id="phone" name="phone" placeholder="Enter 10-digit phone number"
+                        autocomplete="tel" maxlength="10">
+
+                    <small class="error" id="phoneError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+
+                    <input type="password" id="password" name="password" placeholder="Create a strong password"
+                        autocomplete="new-password">
+
+                    <small class="password-hint">
+                        Minimum 8 characters with uppercase,
+                        lowercase and a number.
+                    </small>
+
+                    <small class="error" id="passwordError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+
+                    <input type="password" id="confirmPassword" name="confirmPassword"
+                        placeholder="Re-enter your password" autocomplete="new-password">
+
+                    <small class="error" id="confirmPasswordError"></small>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    Create Account
+                </button>
+
+            </form>
+
+            <div class="success-message" id="successMessage" role="alert">
+                <div class="success-icon">✓</div>
+
+                <h2>Registration Successful!</h2>
+
+                <p>
+                    Your account has been created successfully.
+                </p>
+
+                <button type="button" id="resetBtn" class="reset-btn">
+                    Register Another Account
+                </button>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

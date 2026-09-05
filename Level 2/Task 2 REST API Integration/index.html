@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Explorer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container nav">
+            <div class="logo">
+                GitHub<span>Explorer</span>
+            </div>
+
+            <a href="https://github.com" target="_blank" class="github-link">
+                GitHub
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-content">
+                <span class="badge">Tushar's REST API PROJECT</span>
+
+                <h1>
+                    Explore GitHub
+                    <span>Profiles</span>
+                </h1>
+
+                <p>
+                    Search for any GitHub user and explore their profile,
+                    repositories, followers and more using the GitHub REST API.
+                </p>
+
+                <div class="search-box">
+                    <input type="text" id="usernameInput" placeholder="Enter GitHub username..." autocomplete="off">
+
+                    <button id="searchBtn">
+                        Search
+                    </button>
+                </div>
+
+                <p class="search-hint">
+                    Try usernames like octocat, torvalds or github
+                </p>
+            </div>
+        </section>
+
+        <section class="results-section">
+            <div class="container">
+
+                <div id="loading" class="loading hidden">
+                    <div class="spinner"></div>
+                    <p>Searching GitHub...</p>
+                </div>
+
+                <div id="error" class="error hidden">
+                    <div class="error-icon">!</div>
+                    <h3>User Not Found</h3>
+                    <p id="errorMessage">
+                        Please check the username and try again.
+                    </p>
+                </div>
+
+                <div id="profile" class="profile hidden">
+
+                    <div class="profile-card">
+
+                        <div class="profile-top">
+                            <img id="avatar" src="" alt="GitHub profile" class="avatar">
+
+                            <div class="profile-info">
+                                <h2 id="name">GitHub User</h2>
+
+                                <p id="username" class="username">
+                                    @username
+                                </p>
+
+                                <p id="bio" class="bio">
+                                    No bio available.
+                                </p>
+
+                                <a id="profileLink" href="#" target="_blank" class="profile-btn">
+                                    View GitHub Profile
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="stats">
+
+                            <div class="stat">
+                                <span class="stat-value" id="repositories">
+                                    0
+                                </span>
+                                <span class="stat-label">
+                                    Repositories
+                                </span>
+                            </div>
+
+                            <div class="stat">
+                                <span class="stat-value" id="followers">
+                                    0
+                                </span>
+                                <span class="stat-label">
+                                    Followers
+                                </span>
+                            </div>
+
+                            <div class="stat">
+                                <span class="stat-value" id="following">
+                                    0
+                                </span>
+                                <span class="stat-label">
+                                    Following
+                                </span>
+                            </div>
+
+                            <div class="stat">
+                                <span class="stat-value" id="gists">
+                                    0
+                                </span>
+                                <span class="stat-label">
+                                    Public Gists
+                                </span>
+                            </div>
+
+                        </div>
+
+                        <div class="details">
+
+                            <div class="detail">
+                                <span class="detail-icon">📍</span>
+                                <div>
+                                    <span class="detail-label">
+                                        Location
+                                    </span>
+                                    <span id="location">
+                                        Not available
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="detail">
+                                <span class="detail-icon">🏢</span>
+                                <div>
+                                    <span class="detail-label">
+                                        Company
+                                    </span>
+                                    <span id="company">
+                                        Not available
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="detail">
+                                <span class="detail-icon">🔗</span>
+                                <div>
+                                    <span class="detail-label">
+                                        Website
+                                    </span>
+                                    <a id="website" href="#" target="_blank">
+                                        Not available
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="detail">
+                                <span class="detail-icon">📅</span>
+                                <div>
+                                    <span class="detail-label">
+                                        Joined GitHub
+                                    </span>
+                                    <span id="joined">
+                                        Not available
+                                    </span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="repositories-section">
+
+                        <div class="section-heading">
+                            <div>
+                                <span class="small-title">
+                                    RECENT WORK
+                                </span>
+                                <h2>Repositories</h2>
+                            </div>
+
+                            <span id="repoCount" class="repo-count">
+                                0 repositories
+                            </span>
+                        </div>
+
+                        <div id="repositoriesContainer" class="repositories-grid">
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div id="welcome" class="welcome">
+                    <div class="welcome-icon">
+                        ◉
+                    </div>
+
+                    <h2>Find a GitHub Developer</h2>
+
+                    <p>
+                        Enter a GitHub username above to discover their
+                        profile and open-source projects.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>
+            GitHub Explorer • REST API Integration
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
